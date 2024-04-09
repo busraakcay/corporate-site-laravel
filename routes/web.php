@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminPanel\AuthController;
+use App\Http\Controllers\AdminPanel\DashboardController;
+use App\Http\Controllers\UserPanel\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /** User Panel */
@@ -20,8 +21,12 @@ Route::get('/', function () {
 
 /** Admin Panel */
 
-Route::group([
-    'prefix' => 'cp',
-], function () {
+Route::prefix('cp')->name('admin.')->group(function () {
+    Route::get('/giris-yap', [AuthController::class, 'loginPage'])->name('loginPage')->middleware('authManager');
+    Route::post('/manage-login', [AuthController::class, 'login'])->name('login')->middleware('authManager');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+});
+
+Route::prefix('cp')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 });
