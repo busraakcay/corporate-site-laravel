@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPanel\AuthController;
 use App\Http\Controllers\AdminPanel\DashboardController;
+use App\Http\Controllers\AdminPanel\SettingsController;
 use App\Http\Controllers\UserPanel\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,5 @@ Route::prefix('cp')->name('admin.')->group(function () {
 
 Route::prefix('cp')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
 });

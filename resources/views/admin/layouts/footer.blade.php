@@ -5,7 +5,7 @@
     <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
         <div class="text-dark order-2 order-md-1">
             <span class="text-muted font-weight-bold mr-2">Copyright © 2024</span>
-            <a href="https://www.merlyn89.com.tr/" target="_blank" class="text-dark-75 text-hover-primary">Designed By
+            <a href="https://www.merlyn89.com.tr/" target="_blank" class="text-dark-75 text-hover-primary">
                 Merlyn89</a>
         </div>
     </div>
