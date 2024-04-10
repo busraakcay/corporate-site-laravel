@@ -45,8 +45,8 @@
                 </div> --}}
                 <div class="login-signin">
                     <div class="mb-20">
-                        <h3>Merlyn89 Yönetim Paneli</h3>
-                        <p class="opacity-60 font-weight-bold"><a href="https://www.merlyn89.com.tr" target="_blank" class="text-white">Merlyn89</a> Kurumsal Web Sitesi</p>
+                        <h3>{{getSettings()->company_name}} Yönetim Paneli</h3>
+                        <p class="opacity-60 font-weight-bold"><a href="https://www.merlyn89.com.tr" target="_blank" class="text-white">{{getSettings()->company_name}}</a> Kurumsal Web Sitesi</p>
                     </div>
                     <form class="form" method="post" action="{{route('admin.login')}}">
                         @csrf

@@ -19,7 +19,7 @@ class AuthManager
         if (auth()->user() == null) {
             return $next($request);
         } else {
-            return redirect()->route('admin.index');
+            return redirect()->route('admin.dashboard');
         }
     }
 }

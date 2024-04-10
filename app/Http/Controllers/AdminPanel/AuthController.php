@@ -32,7 +32,7 @@ class AuthController extends Controller
                 $user = $query->first();
                 if (Hash::check($password, $user->password)) {
                     Auth::login($user);
-                    return redirect()->route('admin.index')->with('success', 'Başarıyla Giriş Yapıldı');
+                    return redirect()->route('admin.dashboard')->with('success', 'Başarıyla Giriş Yapıldı');
                 } else {
                     return redirect()->back()->with('error', 'Kullanıcı Adı Veya Şifre Yanlış!');
                 }

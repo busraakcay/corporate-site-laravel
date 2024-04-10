@@ -4,11 +4,52 @@ namespace App\Http\Controllers\AdminPanel;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Settings;
 
 class SettingsController extends Controller
 {
     public function index()
     {
-        return view('admin.settings.index');
+        $config = getSettings();
+        return view('admin.settings.index', compact('config'));
+    }
+
+    public function update(Request $request)
+    {
+
+        $request->validate([
+        //    'name' => 'required|string|max:30|min:3',
+
+
+            'companyName' => 'required',
+            'companyEmail' => 'required',
+            'companyPhone' => 'required',
+            'companyAddress' => 'required',
+            'siteTitleTR' => 'required',
+            'siteKeywordTR' => 'required',
+            'siteDescriptionTR' => 'required',
+            'siteTitleEN' => 'required',
+            'siteKeywordEN' => 'required',
+            'siteDescriptionEN' => 'required',
+            'aboutUsTR' => 'required',
+            'aboutUsEN' => 'required',
+        ]);
+        // logo ve favicon güncellenecek..
+        Settings::where('id', 1)->update([
+            'about_us_tr' => $request->input('aboutUsTR'),
+            'about_us_en' => $request->input('aboutUsEN'),
+            'company_name' => $request->input('companyName'),
+            'company_email' => $request->input('companyEmail'),
+            'company_phone' => $request->input('companyPhone'),
+            'company_address' => $request->input('companyAddress'),
+            'seo_title_tr' => $request->input('siteTitleTR'),
+            'seo_keywords_tr' => $request->input('siteKeywordTR'),
+            'seo_description_tr' => $request->input('siteDescriptionTR'),
+            'seo_title_en' => $request->input('siteTitleEN'),
+            'seo_keywords_en' => $request->input('siteKeywordEN'),
+            'seo_description_en' => $request->input('siteDescriptionEN'),
+        ]);
+
+        return redirect()->back()->with('success', 'Ayarlar başarıyla güncellendi.');
     }
 }

@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Yönetim Paneli | Merlyn89</title>
+    <title>Yönetim Paneli | {{getSettings()->company_name}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link href="{{ asset('assets/panel/plugins/custom/fullcalendar/fullcalendar.bundle15aa.css') }}" rel="stylesheet" type="text/css" />
@@ -33,7 +33,7 @@
 
 <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
     <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
-        <a href="{{ route('admin.index') }}">
+        <a href="{{ route('admin.dashboard') }}">
             <i class="menu-icon fab fa-cpanel fa-5x" aria-hidden="true"></i>
         </a>
         <div class="d-flex align-items-center">
@@ -60,7 +60,7 @@
         <div class="d-flex flex-row flex-column-fluid page">
             <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside">
                 <div class="brand flex-column-auto" id="kt_brand">
-                    <a href="{{ route('admin.index') }}" class="brand-logo">
+                    <a href="{{ route('admin.dashboard') }}" class="brand-logo">
                         <i class="menu-icon fab fa-cpanel fa-5x" id="logoIcon" aria-hidden="true"></i>
                     </a>
                     <script type="text/javascript">
@@ -81,7 +81,7 @@
                     <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
                         <ul class="menu-nav">
                             <li class="menu-item {{ (request()->segment(1) == 'admin') ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                                <a href="" class="menu-link">
+                                <a href="{{route('admin.dashboard')}}" class="menu-link">
                                     <i class="menu-icon fas fa-tachometer-alt"></i>
                                     <span class="menu-text">Kontrol Paneli</span>
                                 </a>
@@ -148,7 +148,7 @@
 
                                 <ul class="menu-nav">
                                     <li class="menu-item menu-item-submenu menu-item-rel menu-item-active" data-menu-toggle="click" aria-haspopup="true">
-                                        <h5 class="text-dark font-weight-bold my-1 mr-5">{{'Merlyn89 Kurumsal'}}</h5>
+                                        <h5 class="text-dark font-weight-bold my-1 mr-5">{{getSettings()->company_name . ' Kurumsal'}}</h5>
                                     </li>
 
                                 </ul>

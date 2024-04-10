@@ -29,6 +29,7 @@ Route::prefix('cp')->name('admin.')->group(function () {
 });
 
 Route::prefix('cp')->name('admin.')->middleware('auth')->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
+    Route::put('/update-settings', [SettingsController::class, 'update'])->name('updateSettings');
 });

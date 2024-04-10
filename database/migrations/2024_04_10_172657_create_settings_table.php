@@ -15,13 +15,25 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->longText('aboutUs');
+            $table->longText('about_us_tr');
+            $table->longText('about_us_en');
             $table->string('logo')->nullable();
             $table->string('favicon')->nullable();
-            $table->string('companyName');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('address');
+            $table->string('company_name');
+            $table->string('company_email');
+            $table->string('company_phone');
+            $table->string('company_address');
+
+            $table->longText('seo_title_tr');
+            $table->longText('seo_keywords_tr');
+            $table->longText('seo_description_tr');
+
+            $table->longText('seo_title_en');
+            $table->longText('seo_keywords_en');
+            $table->longText('seo_description_en');
+
+
+
             $table->timestamps();
         });
     }
