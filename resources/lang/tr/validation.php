@@ -161,17 +161,21 @@ return [
     */
 
     'attributes' => [
-        'name' => 'Ad',
+        'name' => 'Ad Soyad',
         'username' => 'Kullanıcı Adı',
         'email' => 'E-Mail',
         'phone' => 'Telefon',
+
+        'oldPassword' => 'Eski Şifre',
+        'newPassword' => 'Yeni Şifre',
+        'confirmPassword' => 'Yeni Şifre Tekrar',
 
 
         'companyName' => 'Şirket Adı',
         'companyEmail' => 'Email',
         'companyPhone' => 'Telefon',
         'companyAddress' => 'Şirket Adresi',
-        
+
         'siteTitleTR' => 'Site Başlık (TR)',
         'siteKeywordTR' => 'Site Anahtar Kelimeler (TR)',
         'siteDescriptionTR' => 'Site Açıklama (TR)',
@@ -183,7 +187,18 @@ return [
         'aboutUsTR' => 'Hakkımızda (TR)',
         'aboutUsEN' => 'Hakkımızda (EN)',
 
+        'logo' => 'Logo',
 
+        'date' => 'Tarih',
+        'image_tr' => 'Resim (TR)',
+        'image_en' => 'Resim (EN)',
+
+        'upload_image_tr' => 'Resim (TR)',
+        'upload_image_en' => 'Resim (EN)',
+        'title_tr' => 'Başlık (TR)',
+        'title_en' => 'Başlık (EN)',
+        'content_tr' => 'İçerik (TR)',
+        'content_en' => 'İçerik (EN)',
 
 
     ],

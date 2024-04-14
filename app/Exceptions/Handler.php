@@ -2,7 +2,10 @@
 
 namespace App\Exceptions;
 
+use Facade\Ignition\Exceptions\ViewException;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\Redirect;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -37,5 +40,17 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    public function render($request, Throwable $exception)
+    {
+        if (
+            $exception instanceof ViewException &&
+            strpos($exception->getMessage(), "SQLSTATE[HY000] [2002] Connection refused") !== false
+        ) {
+            return Redirect::to('/db-exception');
+        }
+
+        return parent::render($request, $exception);
     }
 }

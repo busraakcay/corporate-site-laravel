@@ -40,6 +40,7 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <button type="button" id="crop_logo_cancel" class="btn btn-danger">İptal</button>
                 <button type="button" id="crop_logo" class="btn btn-primary">Kırp</button>
             </div>
         </div>
@@ -135,9 +136,9 @@
                                             <div class="image_area">
                                                 <div class="d-block" for="upload_image_logo">
                                                     <input type="hidden" name="image" value="" id="uploaded_image_logo" />
-                                                    <input type="hidden" value="180" id="width" />
-                                                    <input type="hidden" value="50" id="height" />
-                                                    <input type="file" name="uploadImage" accept="image/jpeg,image/png,image/gif" class="form-control image" id="upload_image_logo" />
+                                                    <input type="hidden" value="{{getLogoDimensions()["width"]}}" id="width" />
+                                                    <input type="hidden" value="{{getLogoDimensions()["height"]}}" id="height" />
+                                                    <input type="file" name="logo" accept="image/jpeg,image/png,image/gif,image/jpg" class="form-control image" id="upload_image_logo" />
                                                 </div>
                                             </div>
                                         </div>
@@ -147,7 +148,7 @@
                                     <label class="col-3">Geçerli Logo</label>
                                     <div class="col-9">
                                         <div class="input-group">
-                                            <img class="img-size-logo" src="{{asset('uploads/')}}/{{ $config->logo }}" alt="{{ $config->company_name }}">
+                                            <img class="" src="{{asset('uploads/')}}/{{ $config->logo }}" alt="{{ $config->company_name }}">
                                         </div>
                                     </div>
                                 </div>
@@ -270,11 +271,11 @@
             </div>
         </div>
         <div class="card-footer">
-            <button type="sumbit" class="btn btn-success btn-shadow mr-2">Kaydet</button>
+            <button type="sumbit" class="btn btn-primary btn-shadow mr-2">Kaydet</button>
         </div>
 
     </form>
-    {{-- <input type="hidden" id="cropImgLogo" value="{{ route('cropImgLogo') }}"> --}}
+    <input type="hidden" id="cropImage" value="{{ route('cropImage') }}">
 </div>
 
 <script>
@@ -314,33 +315,35 @@
             cropper = null;
         });
 
+        $('#crop_logo_cancel').click(function() {
+            $modal.modal('hide');
+            document.getElementById('upload_image_logo').value = ''
+        })
+
         $('#crop_logo').click(function() {
             canvas = cropper.getCroppedCanvas({
                 width: parseInt(document.getElementById('width').value)
                 , height: parseInt(document.getElementById('height').value)
             });
-
             canvas.toBlob(function(blob) {
                 url = URL.createObjectURL(blob);
                 var reader = new FileReader();
                 reader.readAsDataURL(blob);
                 reader.onloadend = function() {
-
                     var base64data = reader.result;
                     $modal.modal('hide');
                     $.ajax({
-                        url: $("#cropImgLogo").val()
+                        url: $("#cropImage").val()
                         , method: 'POST'
                         , data: {
                             image: base64data
                             , _token: "{{ csrf_token() }}"
                         , }
                         , success: function(data) {
-                            //console.log(data);
+                            // console.log(data);
                             document.getElementById("uploaded_image_logo").value = data;
                         }
                     });
-                    $modal.modal('hide');
                 };
             });
 

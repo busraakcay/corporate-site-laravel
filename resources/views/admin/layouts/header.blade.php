@@ -80,7 +80,7 @@
                 <div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
                     <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
                         <ul class="menu-nav">
-                            <li class="menu-item {{ (request()->segment(1) == 'admin') ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                            <li class="menu-item {{ (request()->segment(1) == 'cp') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                                 <a href="{{route('admin.dashboard')}}" class="menu-link">
                                     <i class="menu-icon fas fa-tachometer-alt"></i>
                                     <span class="menu-text">Kontrol Paneli</span>
@@ -122,7 +122,7 @@
                             </li>
 
                             <li class="menu-item {{ (request()->segment(2) == 'news') ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="" class="menu-link menu-toggle">
+                                <a href="{{route('admin.news')}}" class="menu-link menu-toggle">
                                     <i class="menu-icon far fa-newspaper"></i>
                                     <span class="menu-text">Haberler</span>
                                 </a>
@@ -183,8 +183,7 @@
                                         <div class="dropdown-menu p-0 m-0 dropdown-menu-anim-up dropdown-menu-sm dropdown-menu-right">
                                             <ul class="navi navi-hover py-4">
                                                 <li class="navi-item">
-                                                    {{-- {{ route('admin.profile.index', [Auth::user()->username, Auth::user()->id]) }} --}}
-                                                    <a href="" class="navi-link">
+                                                    <a href="{{ route('admin.profile', [Auth::user()->id]) }}" class="navi-link">
                                                         <span class="symbol symbol-20 mr-3">
                                                             <i class="fas fa-user-circle"></i>
                                                         </span>

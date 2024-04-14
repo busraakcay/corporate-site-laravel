@@ -5,7 +5,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>404 | {{__('Böyle bir sayfa bulunamadı!')}}</title>
+    <title>2002 | {{__('Veritabanı bulunamadı!')}}</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="canonical" href="https://keenthemes.com/metronic" />
@@ -34,9 +34,16 @@
 
             <div class="container d-flex flex-row-fluid flex-column justify-content-md-center p-12">
                 <h1 class="error-title font-weight-boldest text-info mt-10 mt-md-0 mb-12">{{__('Hata!')}}</h1>
-                <p class="font-weight-boldest display-4">{{__('Burada bir şeyler ters gitti!')}}</p>
+                <p class="font-weight-boldest display-4">{{__('Veritabanı yok veya bağlanamadı.')}}</p>
                 <p class="font-size-h3"></p>
+
+                <a href="{{ app('router')->has('home') ? route('home') : url('/') }}">
+                    <button class="bg-transparent text-grey-darkest font-bold uppercase tracking-wide py-3 px-6 border-2 border-grey-light hover:border-grey rounded-lg">
+                        {{ __('Yeniden Dene') }}
+                    </button>
+                </a>
             </div>
+
 
         </div>
 

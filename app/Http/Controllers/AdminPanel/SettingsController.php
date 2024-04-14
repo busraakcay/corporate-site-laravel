@@ -16,11 +16,7 @@ class SettingsController extends Controller
 
     public function update(Request $request)
     {
-
         $request->validate([
-        //    'name' => 'required|string|max:30|min:3',
-
-
             'companyName' => 'required',
             'companyEmail' => 'required',
             'companyPhone' => 'required',
@@ -33,9 +29,28 @@ class SettingsController extends Controller
             'siteDescriptionEN' => 'required',
             'aboutUsTR' => 'required',
             'aboutUsEN' => 'required',
+            'image' => 'required',
+            'logo' => 'image',
         ]);
-        // logo ve favicon güncellenecek..
+
+        $config = getSettings();
+        $uploadedImg = $request->image;
+
+        if ($uploadedImg !== null) {
+            $logo = adjustImage(
+                $uploadedImg,
+                $config->company_name,
+                "uploads/",
+                $config->logo,
+                getLogoDimensions()["width"],
+                getLogoDimensions()["height"]
+            );
+        } else {
+            $logo = $config->logo;
+        }
+
         Settings::where('id', 1)->update([
+            'logo' => $logo,
             'about_us_tr' => $request->input('aboutUsTR'),
             'about_us_en' => $request->input('aboutUsEN'),
             'company_name' => $request->input('companyName'),
@@ -49,7 +64,7 @@ class SettingsController extends Controller
             'seo_keywords_en' => $request->input('siteKeywordEN'),
             'seo_description_en' => $request->input('siteDescriptionEN'),
         ]);
-
+        deleteTempImages();
         return redirect()->back()->with('success', 'Ayarlar başarıyla güncellendi.');
     }
 }
