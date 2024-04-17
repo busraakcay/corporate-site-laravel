@@ -7,7 +7,7 @@
             <h3 class="card-label">Haberler</h3>
         </div>
         <div class="card-toolbar">
-            <a href="{{ route('admin.createNews') }}" class="btn btn-primary font-weight-bolder">
+            <a href="{{ route('admin.news.create') }}" class="btn btn-primary font-weight-bolder">
                 Yeni Kayıt Ekle</a>
         </div>
     </div>
@@ -35,19 +35,19 @@
                         <td width="20%" class="datatable-cell" data-label="Tarihi">{{$anews->date->format('d.m.Y')}}</td>
                         <td width="20%" class="datatable-cell" data-label="Sıra">
                             <input data-id="{{ $anews->id }}" name="place" class="text-center col-3" value="{{ $anews->place }}" />
-                            <input type="hidden" id="ajax_place_url" value="{{ route('admin.changeNewsPlace') }}">
+                            <input type="hidden" id="ajax_place_url" value="{{ route('admin.news.changePlace') }}">
                         </td>
 
                         <td width="20%" class="datatable-cell" data-label="Durumu">
                             <input data-id="{{ $anews->id }}" class="toggle-class js-toggle-class-status" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Aktif" data-off="Pasif" {{ $anews->status ? 'checked' : '' }}>
-                            <input type="hidden" id="ajax_status_url" value="{{ route('admin.changeNewsStatus') }}">
+                            <input type="hidden" id="ajax_status_url" value="{{ route('admin.news.changeStatus') }}">
                         </td>
 
-                        <form action="{{ route('admin.destroyNews', $anews->id) }}" id="deleteForm-{{ $anews->id }}" method="post" class="hidden">
+                        <form action="{{ route('admin.news.destroy', $anews->id) }}" id="deleteForm-{{ $anews->id }}" method="post" class="hidden">
                             @csrf @method('delete')
                         </form>
                         <td width="20%" class="datatable-cell" data-label="İşlemler"><span>
-                                <a href="{{ route('admin.editNews', $anews->id) }}" class="btn btn-sm btn-light btn-text-primary btn-icon mr-2" title="Düzenle">
+                                <a href="{{ route('admin.news.edit', $anews->id) }}" class="btn btn-sm btn-light btn-text-primary btn-icon mr-2" title="Düzenle">
                                     <span class="svg-icon svg-icon-md">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

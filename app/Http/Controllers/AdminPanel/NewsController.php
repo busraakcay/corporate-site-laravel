@@ -76,7 +76,7 @@ class NewsController extends Controller
 
         ]);
         deleteTempImages();
-        return redirect()->route('admin.news')->with('success', 'Haber başarıyla eklendi.');
+        return redirect()->route('admin.news.index')->with('success', 'Haber başarıyla eklendi.');
     }
 
     public function edit($id)
@@ -143,7 +143,7 @@ class NewsController extends Controller
 
         ]);
         deleteTempImages();
-        return redirect()->route('admin.news')->with('success', 'Haber başarıyla güncellendi.');
+        return redirect()->route('admin.news.index')->with('success', 'Haber başarıyla güncellendi.');
     }
 
     public function changePlace(Request $request)
@@ -163,7 +163,6 @@ class NewsController extends Controller
 
     public function destroy($id)
     {
-        $newsId = $id;
         $news = News::withoutGlobalScopes()->findOrFail($id);
         $languages = getLanguages();
         foreach ($languages as $language) {
@@ -172,7 +171,7 @@ class NewsController extends Controller
             }
         }
         $news->delete();
-        if (!news::withoutGlobalScopes()->where('id', $newsId)->exists()) {
+        if (!News::withoutGlobalScopes()->where('id', $id)->exists()) {
             return redirect()->back()->with('success', 'Haber başarıyla silindi.');
         } else {
             return redirect()->back()->with('error', 'Haber silinirken bir hata oluştu.');

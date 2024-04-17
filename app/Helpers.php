@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\Settings;
 use Illuminate\Support\Str;
@@ -12,11 +13,7 @@ function getSettings()
 
 function checkPasswords($password, $repassword)
 {
-    if ($password == $repassword) {
-        return true;
-    } else {
-        return false;
-    }
+    return $password == $repassword;
 }
 
 function getLogoDimensions()
@@ -80,4 +77,9 @@ function deleteTempImages()
             File::delete($file->getPathname());
         }
     }
+}
+
+function productCount()
+{
+    return Product::count();
 }

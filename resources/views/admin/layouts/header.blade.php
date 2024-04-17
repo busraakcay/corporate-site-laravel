@@ -80,7 +80,7 @@
                 <div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
                     <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
                         <ul class="menu-nav">
-                            <li class="menu-item {{ (request()->segment(1) == 'cp') ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                            <li class="menu-item {{ (request()->segment(2) == '') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                                 <a href="{{route('admin.dashboard')}}" class="menu-link">
                                     <i class="menu-icon fas fa-tachometer-alt"></i>
                                     <span class="menu-text">Kontrol Paneli</span>
@@ -103,26 +103,26 @@
 
 
                             <li class="menu-item {{ (request()->segment(2) == 'products') ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="" class="menu-link">
+                                <a href="{{ route('admin.products.index') }}" class="menu-link">
                                     <i class="menu-icon fas fa-tags">
                                         <span></span>
                                     </i>
                                     <span class="menu-text">Ürünler</span>
                                     <span class="menu-label">
-                                        <span class="label label-rounded label-primary">6</span>
+                                        <span class="label label-rounded label-primary">{{productCount()}}</span>
                                     </span>
                                 </a>
                             </li>
 
                             <li class="menu-item {{ (request()->segment(2) == 'banners') ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="" class="menu-link menu-toggle">
+                                <a href="{{ route('admin.banners.index') }}" class="menu-link menu-toggle">
                                     <i class="menu-icon far fa-image"></i>
                                     <span class="menu-text">Banner</span>
                                 </a>
                             </li>
 
                             <li class="menu-item {{ (request()->segment(2) == 'news') ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="{{route('admin.news')}}" class="menu-link menu-toggle">
+                                <a href="{{route('admin.news.index')}}" class="menu-link menu-toggle">
                                     <i class="menu-icon far fa-newspaper"></i>
                                     <span class="menu-text">Haberler</span>
                                 </a>

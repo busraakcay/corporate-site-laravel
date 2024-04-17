@@ -45,6 +45,7 @@ class SettingsSeeder extends Seeder
                 'company_name' => 'Merlyn89',
                 'company_phone' => '555 555 55 55',
                 'company_email' => 'mehmetucar@example.com',
+                'logo' => 'merlyn89-661bbfa1432901713094561y59888.png',
             ],
         ];
 

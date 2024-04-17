@@ -26,9 +26,7 @@
     </span>
 </div>
 
-<!-- <script src="{{asset('assets/panel/js/variation.js')}}"></script> -->
 <script src="{{asset('assets/panel/plugins/global/plugins.bundle15aa.js')}}"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
 <script src="{{ asset('assets/panel/plugins/custom/cropper/cropper.bundle15aa.js') }}"></script>
 <script src="{{ asset('assets/panel/plugins/custom/prismjs/prismjs.bundle15aa.js') }}"></script>
 <script src="{{ asset('assets/panel/js/scripts.bundle15aa.js') }}"></script>
@@ -38,12 +36,9 @@
 <script src="{{ asset('assets/sweetalert/sweetalert2.all.min.js') }}"></script>
 <script src="{{ asset('assets/panel/js/pages/widgets15aa.js') }}"></script>
 <script src="{{ asset('assets/panel/js/pages/crud/forms/widgets/select215aa.js') }}"></script>
-<!-- <script src="{{ asset('assets/panel/js/pages/crud/file-upload/dropzonejs15aa.js') }}"></script>
-<script src="{{ asset('assets/panel/metronic/metronic/theme/html/demo1/dist/assets/js/pages/crud/file-upload/dropzonejs15aa.js') }}"></script> -->
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script src="{{ asset('assets/panel/js/main_category.js') }}"></script>
 <script src="{{ asset('assets/panel/js/place_and_status.js') }}"></script>
-<!-- <script src="{{ asset('assets/panel/js/discount.js') }}"></script> -->
 <script src="{{ asset('assets/panel/js/integration.js') }}"></script>
 <script src="{{ asset('assets/panel/js/repeater.js') }}"></script>
 <script src="{{ asset('assets/panel/js/variation.js') }}"></script>

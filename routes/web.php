@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AuthController;
+use App\Http\Controllers\AdminPanel\BannerController;
 use App\Http\Controllers\AdminPanel\DashboardController;
 use App\Http\Controllers\AdminPanel\NewsController;
+use App\Http\Controllers\AdminPanel\ProductController;
 use App\Http\Controllers\AdminPanel\ProfileController;
 use App\Http\Controllers\AdminPanel\SettingsController;
 use App\Http\Controllers\CropImageController;
@@ -12,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('/cropImage', [CropImageController::class, 'cropImage'])->name('cropImage');
+Route::post('/cropImageDestroy', [CropImageController::class, 'cropImageDestroy'])->name('cropImageDestroy');
+
+
+Route::get('/getProductImagesToDropzone', [CropImageController::class, 'getProductImagesToDropzone'])->name('getProductImagesToDropzone');
+Route::get('/getProductImageId', [CropImageController::class, 'getProductImageId'])->name('getProductImageId');
+
+
+
 Route::get('/db-exception', [ErrorHandlingController::class, 'dbException'])->name('dbException');
 
 /** User Panel */
@@ -45,14 +55,8 @@ Route::prefix('cp')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
     Route::put('/update-settings', [SettingsController::class, 'update'])->name('updateSettings');
 
-    Route::get('/news', [NewsController::class, 'index'])->name('news');
 
-    Route::get('/create-news', [NewsController::class, 'create'])->name('createNews');
-    Route::post('/store-news', [NewsController::class, 'store'])->name('storeNews');
-
-    Route::get('/edit-news/{id}', [NewsController::class, 'edit'])->name('editNews');
-    Route::put('/update-news/{id}', [NewsController::class, 'update'])->name('updateNews');
-    Route::delete('/destroy-news/{id}', [NewsController::class, 'destroy'])->name('destroyNews');
-    Route::get('/change-news-status', [NewsController::class, 'changeStatus'])->name('changeNewsStatus');
-    Route::get('/change-news-place', [NewsController::class, 'changePlace'])->name('changeNewsPlace');
+    require_once 'adminRoutes/newsRoutes.php';
+    require_once 'adminRoutes/bannersRoutes.php';
+    require_once 'adminRoutes/productsRoutes.php';
 });

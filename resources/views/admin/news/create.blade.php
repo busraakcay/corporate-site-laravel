@@ -26,7 +26,7 @@
             <h3 class="card-label">Yeni Haber Ekle</h3>
         </div>
     </div>
-    <form action="{{ route('admin.storeNews') }}" class="form" id="kt_form" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.news.store') }}" class="form" id="kt_form" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card-body">
             <div class="mb-2 mx-2">

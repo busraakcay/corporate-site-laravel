@@ -26,7 +26,7 @@
             <h3 class="card-label">Haber Güncelle</h3>
         </div>
     </div>
-    <form action="{{ route('admin.updateNews', $news->id) }}" class="form" id="kt_form" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.news.update', $news->id) }}" class="form" id="kt_form" method="POST" enctype="multipart/form-data">
         @csrf
         @method('put')
         <div class="card-body">

@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('code');
             $table->string('name_tr');
             $table->string('name_en');
+            $table->longText('description_tr');
+            $table->longText('description_en');
             $table->string('color_tr');
             $table->string('color_en');
             $table->string('size');
@@ -25,6 +27,7 @@ class CreateProductsTable extends Migration
             $table->string('material_en');
             $table->string('base_tr');
             $table->string('base_en');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

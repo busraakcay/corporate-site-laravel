@@ -166,6 +166,7 @@ return [
         'email' => 'E-Mail',
         'phone' => 'Telefon',
 
+        'image' => 'Resim',
         'oldPassword' => 'Eski Şifre',
         'newPassword' => 'Yeni Şifre',
         'confirmPassword' => 'Yeni Şifre Tekrar',
@@ -200,6 +201,20 @@ return [
         'content_tr' => 'İçerik (TR)',
         'content_en' => 'İçerik (EN)',
 
+
+        'code' => 'Kod',
+        'size' => 'Asorti',
+        'name_tr' => 'İsim (TR)',
+        'name_en' => 'İsim (EN)',
+        'base_tr' => 'Taban (TR)',
+        'base_en' => 'Taban (EN)',
+        'color_tr' => 'Renk (TR)',
+        'color_en' => 'Renk (EN)',
+        'material_tr' => 'Materyal (TR)',
+        'material_en' => 'Materyal (EN)',
+        'description_tr' => 'Açıklama (TR)',
+        'description_en' => 'Açıklama (EN)',
+        'croppedProductImages' => 'Ürün Resimleri'
 
     ],
 

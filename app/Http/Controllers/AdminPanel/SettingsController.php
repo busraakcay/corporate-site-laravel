@@ -29,7 +29,6 @@ class SettingsController extends Controller
             'siteDescriptionEN' => 'required',
             'aboutUsTR' => 'required',
             'aboutUsEN' => 'required',
-            'image' => 'required',
             'logo' => 'image',
         ]);
 
