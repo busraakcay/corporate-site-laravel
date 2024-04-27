@@ -19,6 +19,8 @@ class CreateProductImagesTable extends Migration
             $table->string('name_tr');
             $table->string('name_en');
             $table->string('image');
+            $table->string('path');
+            $table->string('size');
         });
     }
 

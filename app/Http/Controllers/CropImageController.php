@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -22,7 +23,22 @@ class CropImageController extends Controller
 
     public function cropImageDestroy(Request $request)
     {
-        deleteImage('uploads/temp/', $request->fileName);
+        if ($request->location == 'products') {
+            try {
+                $productImage = ProductImage::withoutGlobalScopes()->where('image', $request->fileName)->first();
+                if (isset($productImage)) {
+                    $productImages = ProductImage::withoutGlobalScopes()->where('product_id', $productImage->product_id)->get();
+                    if (count($productImages) > 1) {
+                        $productImage->delete();
+                        deleteImage('uploads/products/', $request->fileName);
+                    }
+                }
+                deleteImage('uploads/temp/', $request->fileName);
+            } catch (\Exception $e) {
+            }
+        } else {
+            deleteImage('uploads/temp/', $request->fileName);
+        }
     }
 
 

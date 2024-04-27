@@ -71,7 +71,7 @@
                         </div>
                         <div class="form-group">
                             <label for="description_{{$language["code"]}}">Ürün İçeriği ({{$language['name']}}) <span class="text-danger">*</span></label>
-                            <textarea type="text" class="ckeditor" id="ckeditor1" name="description_{{$language["code"]}}" value="{{ old('description_' . $language["code"]) }}" class="form-control" rows="5"></textarea>
+                            <textarea type="text" class="ckeditor" id="ckeditor1" name="description_{{$language["code"]}}" value="{{ old('description_' . $language["code"]) }}" class="form-control" rows="5">{{ old('description_' . $language["code"]) }}</textarea>
                         </div>
                     </div>
                     @endforeach

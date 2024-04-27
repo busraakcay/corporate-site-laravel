@@ -5,12 +5,12 @@
 <div class="card card-custom card-sticky" id="kt_page_sticky_card">
     <div class="card-header">
         <div class="card-title">
-            <h3 class="card-label">Yeni Ürün Ekle</h3>
+            <h3 class="card-label">Ürün Güncelle</h3>
         </div>
     </div>
     <form action="{{ route('admin.products.update', $product->id) }}" class="form" id="kt_form" method="POST" enctype="multipart/form-data">
         @csrf
-        {{-- @method('put') --}}
+        @method('put')
         <div class="card-body">
             <div class="mx-2">
                 <div class="form-group">
@@ -92,6 +92,7 @@
 
 <input type="hidden" id="cropImage" value="{{ route('cropImage') }}">
 <input type="hidden" id="cropImageDestroy" value="{{ route('cropImageDestroy') }}">
+<input type="hidden" id="getProductImagesToDropzone" value="{{ route('getProductImagesToDropzone') }}">
 
 
 <!-- Bu style etiketi burada kalacak -->
@@ -119,6 +120,31 @@
         , thumbnailMethod: 'crop'
         , resizeWidth: parseInt(document.getElementById('width').value)
         , resizeHeight: parseInt(document.getElementById('height').value)
+        , init: function() {
+            var myDropzone = this;
+            $.ajax({
+                url: $("#getProductImagesToDropzone").val()
+                , method: 'GET'
+                , data: {
+                    id: '{{ $productId }}'
+                    , _token: "{{ csrf_token() }}"
+                , }
+                , success: function(data) {
+                    $.each(data, function(key, value) {
+                        var mockFile = {
+                            name: value.image
+                            , size: value.size
+                            , accepted: true
+                        , };
+                        myDropzone.emit("addedfile", mockFile);
+                        myDropzone.emit("thumbnail", mockFile, value.path);
+                        myDropzone.emit("complete", mockFile);
+                        mockFile.previewElement.classList.add('dz-success');
+                        mockFile.previewElement.classList.add('dz-complete');
+                    });
+                }
+            });
+        }
         , accept: function(file, data) {
             var myDropzone = this;
 
@@ -221,6 +247,7 @@
                         , method: 'POST'
                         , data: {
                             fileName: fileName
+                            , location: 'products'
                             , _token: "{{ csrf_token() }}"
                         , }
                         , success: function(response) {
