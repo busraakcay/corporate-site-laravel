@@ -18,7 +18,7 @@ function checkPasswords($password, $repassword)
 
 function getLogoDimensions()
 {
-    return ["width" => "180", "height" => "50"];
+    return ["width" => "298", "height" => "88"];
 }
 
 function getGeneralPhotoDimensions()

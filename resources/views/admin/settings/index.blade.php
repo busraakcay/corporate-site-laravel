@@ -124,7 +124,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
+                                {{-- <div class="form-group row">
                                     <label class="col-3">Logo</label>
                                     <div class="col-9">
                                         <div class="input-group">
@@ -143,7 +143,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group row">
                                     <label class="col-3">Geçerli Logo</label>
                                     <div class="col-9">
