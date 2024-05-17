@@ -27,7 +27,9 @@ Route::get('/db-exception', [ErrorHandlingController::class, 'dbException'])->na
 /** User Panel */
 
 Route::group([
-    'prefix' => 'tr', // local lang prefix
+    'prefix' => '{locale}',
+    'where' => ['locale' => '[a-zA-Z]{2}'],
+    'middleware' => 'setlocale'
 ], function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
 });
@@ -40,13 +42,13 @@ Route::get('/', function () {
 
 /** Admin Panel */
 
-Route::prefix('cp')->name('admin.')->group(function () {
+Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/giris-yap', [AuthController::class, 'loginPage'])->name('loginPage')->middleware('authManager');
     Route::post('/manage-login', [AuthController::class, 'login'])->name('login')->middleware('authManager');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::prefix('cp')->name('admin.')->middleware('auth')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('profile');
     Route::put('/update-profile/{id}', [ProfileController::class, 'update'])->name('updateProfile');

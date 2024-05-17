@@ -2731,7 +2731,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #164a9c;
+    background-color: #09abbc;
     border-color: #007bff
 }
 
@@ -4515,7 +4515,7 @@ input[type=submit].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
     color: #fff;
-    background-color: #164a9c
+    background-color: #09abbc
 }
 
 .nav-fill .nav-item {
@@ -5290,7 +5290,7 @@ input[type=submit].btn-block {
     padding: .5rem .75rem;
     margin-left: -1px;
     line-height: 1.25;
-    color: #164a9c;
+    color: #09abbc;
     background-color: #fff;
     border: 1px solid #dee2e6
 }
@@ -5323,8 +5323,8 @@ input[type=submit].btn-block {
 .page-item.active .page-link {
     z-index: 1;
     color: #fff;
-    background-color: #164a9c;
-    border-color: #164a9c
+    background-color: #09abbc;
+    border-color: #09abbc
 }
 
 .page-item.disabled .page-link {

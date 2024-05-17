@@ -41,11 +41,11 @@ class SettingsSeeder extends Seeder
                 'seo_keywords_en' => 'shoe',
                 'seo_description_en' => 'New generation comfortable shoes',
 
-                'company_address' => 'Konya/Selçuklu',
+                'company_address' => 'Selçuklu/Konya',
                 'company_name' => 'Merlyn89',
                 'company_phone' => '555 555 55 55',
-                'company_email' => 'mehmetucar@example.com',
-                'logo' => 'merlyn89-661bbfa1432901713094561y59888.png',
+                'company_email' => 'info@merlyn89.com',
+                'logo' => 'merlyn-logos/png/merlyn-logo-orj.png',
             ],
         ];
 

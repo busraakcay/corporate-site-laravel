@@ -23,7 +23,7 @@ function getLogoDimensions()
 
 function getGeneralPhotoDimensions()
 {
-    return ["width" => "800", "height" => "600"];
+    return ["width" => "1080", "height" => "1080"];
 }
 
 function getPaginationNumber()

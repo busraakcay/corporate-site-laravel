@@ -101,13 +101,19 @@ section.sidebar{ padding: 60px; }
     background-repeat: no-repeat;
     background-position: center bottom;
 }
-.bg-img3{
-    background-image: url(../images/bg-image/row-bgimage-3.jpg);
+.bg-img3 {
+    background-image: url(../images/slides/slider-mainbg-003.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
+   
+    transition: background-position 0.5s ease, background-color 0.5s ease; /* Transition effect for background-position and background-color */
 }
 
+.bg-img3:hover {
+    filter: hue-rotate(-20deg);
+    background-position: center top; /* Change background-position on hover */
+}
 
 /* ===============================================
     04. Section-Title
@@ -498,7 +504,7 @@ section.sidebar{ padding: 60px; }
 }
 @keyframes blinking {
     50%{
-      background-color: #ffd200;
+      background-color: #09abbc;
       color: #ddd;
     }
     100%{

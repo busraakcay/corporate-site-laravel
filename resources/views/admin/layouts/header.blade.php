@@ -114,12 +114,12 @@
                                 </a>
                             </li>
 
-                            <li class="menu-item {{ (request()->segment(2) == 'banners') ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                            {{-- <li class="menu-item {{ (request()->segment(2) == 'banners') ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="{{ route('admin.banners.index') }}" class="menu-link menu-toggle">
                                     <i class="menu-icon far fa-image"></i>
                                     <span class="menu-text">Banner</span>
                                 </a>
-                            </li>
+                            </li> --}}
 
                             <li class="menu-item {{ (request()->segment(2) == 'news') ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="{{route('admin.news.index')}}" class="menu-link menu-toggle">
