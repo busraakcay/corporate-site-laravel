@@ -15,23 +15,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/cropImage', [CropImageController::class, 'cropImage'])->name('cropImage');
 Route::post('/cropImageDestroy', [CropImageController::class, 'cropImageDestroy'])->name('cropImageDestroy');
-
-
 Route::get('/getProductImagesToDropzone', [CropImageController::class, 'getProductImagesToDropzone'])->name('getProductImagesToDropzone');
 Route::get('/getProductImageId', [CropImageController::class, 'getProductImageId'])->name('getProductImageId');
-
-
-
 Route::get('/db-exception', [ErrorHandlingController::class, 'dbException'])->name('dbException');
 
 /** User Panel */
+
+
 
 Route::group([
     'prefix' => '{locale}',
     'where' => ['locale' => '[a-zA-Z]{2}'],
     'middleware' => 'setlocale'
 ], function () {
+
     Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::get('/hakkimizda', [HomeController::class, 'aboutUs'])->name('aboutUs');
+    Route::get('/iletisim', [HomeController::class, 'contactUs'])->name('contactUs');
+    Route::get('/urunler', [HomeController::class, 'products'])->name('products');
+
+    Route::get('/urun-detay', [HomeController::class, 'productDetail'])->name('productDetail');
 });
 
 

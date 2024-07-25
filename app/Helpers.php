@@ -83,3 +83,9 @@ function productCount()
 {
     return Product::count();
 }
+
+function slugify($str)
+{
+    $language = app()->getLocale();
+    return Str::slug($str, "-", $language);
+}

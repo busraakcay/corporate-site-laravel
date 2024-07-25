@@ -30,7 +30,7 @@
 
 
                 <!-- LAYER NR. 4 -->
-                <a class="tp-caption rev-button ttm-bgcolor-highlight" href="#" target="_self" id="slide-6-layer-4" data-x="['left','left','left','left']" data-hoffset="['80','40','30','30']" data-y="['bottom','bottom','bottom','middle']" data-voffset="['184','120','80','96']" data-fontsize="['15','15','14','12']" data-lineheight="['20','20','16','15']" data-fontweight="['600','600','600','600']" data-color="['rgba(10, 28, 55,1)','rgba(10, 28, 55,1)','rgba(10, 28, 55,1)','rgba(10, 28, 55,1)']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power4.easeInOut;" data-style_hover="c:rgb(255, 255, 255);bg:rgb(0, 11, 28);" data-transform_in="x:[-175%];y:0px;z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;" data-transform_out="x:auto;y:auto;opacity:0;s:1500;e:Power4.easeIn;" data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="1200" data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[15,15,14,14]" data-paddingright="[30,30,22,22]" data-paddingbottom="[14,14,12,12]" data-paddingleft="[30,30,22,22]" data-type="text" data-responsive_offset="on">{{__("View Now")}}<span class="ml-2"><i class="themifyicon ti-angle-right"></i></span>
+                <a class="tp-caption rev-button ttm-bgcolor-highlight" href="{{route('products')}}" target="_self" id="slide-6-layer-4" data-x="['left','left','left','left']" data-hoffset="['80','40','30','30']" data-y="['bottom','bottom','bottom','middle']" data-voffset="['184','120','80','96']" data-fontsize="['15','15','14','12']" data-lineheight="['20','20','16','15']" data-fontweight="['600','600','600','600']" data-color="['rgba(10, 28, 55,1)','rgba(10, 28, 55,1)','rgba(10, 28, 55,1)','rgba(10, 28, 55,1)']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power4.easeInOut;" data-style_hover="c:rgb(255, 255, 255);bg:rgb(0, 11, 28);" data-transform_in="x:[-175%];y:0px;z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;" data-transform_out="x:auto;y:auto;opacity:0;s:1500;e:Power4.easeIn;" data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="1200" data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[15,15,14,14]" data-paddingright="[30,30,22,22]" data-paddingbottom="[14,14,12,12]" data-paddingleft="[30,30,22,22]" data-type="text" data-responsive_offset="on">{{__("View Now")}}<span class="ml-2"><i class="themifyicon ti-angle-right"></i></span>
                 </a>
 
             </li>
@@ -57,7 +57,7 @@
 
 
                 <!-- LAYER NR. 4 -->
-                <a class="tp-caption rev-button ttm-bgcolor-highlight" href="#" target="_self" id="slide-7-layer-4" data-x="['left','left','left','center']" data-hoffset="['80','40','30','0']" data-y="['bottom','bottom','bottom','middle']" data-voffset="['184','120','80','96']" data-fontsize="['15','15','14','12']" data-lineheight="['20','20','16','15']" data-fontweight="['600','600','600','600']" data-color="['rgba(10, 28, 55,1)','rgba(10, 28, 55,1)','rgba(10, 28, 55,1)','rgba(10, 28, 55,1)']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power4.easeInOut;" data-style_hover="c:rgb(255, 255, 255);bg:rgb(0, 11, 28);" data-transform_in="x:[-175%];y:0px;z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;" data-transform_out="x:auto;y:auto;opacity:0;s:1500;e:Power4.easeIn;" data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="1200" data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[15,15,14,14]" data-paddingright="[30,30,22,22]" data-paddingbottom="[14,14,12,12]" data-paddingleft="[30,30,22,22]" data-type="text" data-responsive_offset="on">{{__("View Now")}}<span class="ml-2"><i class="themifyicon ti-angle-right"></i></span>
+                <a class="tp-caption rev-button ttm-bgcolor-highlight" href="{{route('products')}}" target="_self" id="slide-7-layer-4" data-x="['left','left','left','center']" data-hoffset="['80','40','30','0']" data-y="['bottom','bottom','bottom','middle']" data-voffset="['184','120','80','96']" data-fontsize="['15','15','14','12']" data-lineheight="['20','20','16','15']" data-fontweight="['600','600','600','600']" data-color="['rgba(10, 28, 55,1)','rgba(10, 28, 55,1)','rgba(10, 28, 55,1)','rgba(10, 28, 55,1)']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:500;e:Power4.easeInOut;" data-style_hover="c:rgb(255, 255, 255);bg:rgb(0, 11, 28);" data-transform_in="x:[-175%];y:0px;z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;" data-transform_out="x:auto;y:auto;opacity:0;s:1500;e:Power4.easeIn;" data-mask_in="x:[100%];y:0px;s:inherit;e:inherit;" data-start="1200" data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[15,15,14,14]" data-paddingright="[30,30,22,22]" data-paddingbottom="[14,14,12,12]" data-paddingleft="[30,30,22,22]" data-type="text" data-responsive_offset="on">{{__("View Now")}}<span class="ml-2"><i class="themifyicon ti-angle-right"></i></span>
                 </a>
             </li>
         </ul>
@@ -174,8 +174,6 @@
         </div><!-- row end -->
         <div class="products row">
             @foreach($products as $product)
-
-
             <div class="product col-md-3 col-sm-6 col-xs-12">
                 <div class="product-box">
                     <!-- product-box-inner -->
@@ -188,14 +186,12 @@
                         </div>
                     </div><!-- product-box-inner end -->
                     <div class="product-content-box">
-                        <a class="product-title" href="{{ url('product-layout1', $product->id) }}">
+                        <a class="product-title" href="{{ route('productDetail', ['urun' => slugify($product["name_" . app()->getLocale()]), 'id' => $product->id]) }}">
                             <h2>{{ $product["name_" . app()->getLocale()] }}</h2>
                         </a>
                     </div>
                 </div>
             </div>
-
-
             @endforeach
         </div>
     </div>

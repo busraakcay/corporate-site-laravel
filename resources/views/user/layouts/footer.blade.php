@@ -53,7 +53,7 @@
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 widget-area">
                             <div class="widget widget_text ml-40">
                                 <ul class="widget_info_text">
-                                    <li><i class="fa fa-map-marker"></i><strong>{{__('Location')}}</strong> <br> Konya,Türkiye</li>
+                                    <li><i class="fa fa-map-marker"></i><strong>{{__('Location')}}</strong> <br> {{$settings->company_address}}</li>
                                 </ul>
                             </div>
                         </div>
@@ -85,8 +85,8 @@
                             <div class="widget widget_text pr-25 clearfix">
                                 <h3 class="widget-title">{{__('About Us')}}</h3>
                                 <div class="textwidget widget-text">
-                                    <p class="pb-10">{{ Str::limit($settings['about_us_' . "tr"], 200)  }}</p>
-                                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor" href="#" title="">{{__('Read More')}}</a>
+                                    <p>{!!(Str::limit($settings['about_us_' . app()->getLocale()], 200)) !!}</p>
+                                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor" href="{{route('aboutUs')}}" title="">{{__('Read More')}}</a>
                                 </div>
                             </div>
                         </div>
@@ -94,8 +94,8 @@
                             <div class="widget widget_nav_menu clearfix">
                                 <h3 class="widget-title">{{__('Our Company')}}</h3>
                                 <ul class="menu-footer-quick-links">
-                                    <li><a href="#">{{__('About Us')}}</a></li>
-                                    <li><a href="#">{{__('Contact Us')}}</a></li>
+                                    <li><a href="{{route('aboutUs')}}">{{__('About Us')}}</a></li>
+                                    <li><a href="{{route('contactUs')}}">{{__('Contact Us')}}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                                 <h3 class="widget-title">{{__('Our New Products')}}</h3>
                                 <ul class="menu-footer-quick-links">
                                     @foreach($sharedProducts as $product)
-                                    <li><a href="#">{{Str::limit($product["name_" . app()->getLocale()],20)}}</a></li>
+                                    <li><a href="{{ route('productDetail', ['urun' => slugify($product["name_" . app()->getLocale()]), 'id' => $product->id]) }}">{{Str::limit($product["name_" . app()->getLocale()],20)}}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
