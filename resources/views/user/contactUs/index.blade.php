@@ -23,7 +23,7 @@
                                     </div>
                                 </div><!-- section title end -->
 
-                                <div class="mb-5"> {{__("You can contact us for more information about Merlyn89.com or for any questions or suggestions.")}} </div>
+                                <div class="mb-5"> {{__("You can contact us for more information about merlynshoe.com or for any questions or suggestions.")}} </div>
                                 <br />
 
 

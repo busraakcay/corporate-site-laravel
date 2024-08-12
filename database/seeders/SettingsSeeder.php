@@ -33,18 +33,18 @@ class SettingsSeeder extends Seeder
                 Vivamus rhoncus erat ac maximus suscipit. Vivamus semper velit a ipsum vehicula, nec semper arcu molestie. Duis dictum cursus mauris, tincidunt imperdiet erat sollicitudin et. Nulla ultricies tellus ut ex pharetra, a cursus nunc convallis. Sed non neque turpis. Sed augue lectus, commodo tincidunt diam ac, finibus commodo dui. Praesent ut dui mauris. Vivamus nec mauris mauris.',
 
 
-                'seo_title_tr' => 'Merlyn89 Ayakkabı',
+                'seo_title_tr' => 'Merlyn Ayakkabı',
                 'seo_keywords_tr' => 'ayakkabı',
                 'seo_description_tr' => 'Yeni nesil rahat ayakkabılar',
 
-                'seo_title_en' => 'Merlyn89 Shoe',
+                'seo_title_en' => 'Merlyn Shoe',
                 'seo_keywords_en' => 'shoe',
                 'seo_description_en' => 'New generation comfortable shoes',
 
                 'company_address' => 'Selçuklu/Konya',
-                'company_name' => 'Merlyn89',
+                'company_name' => 'Merlyn',
                 'company_phone' => '555 555 55 55',
-                'company_email' => 'info@merlyn89.com',
+                'company_email' => 'info@merlyn.com',
                 'logo' => 'merlyn-logos/png/merlyn-logo-orj.png',
             ],
         ];
