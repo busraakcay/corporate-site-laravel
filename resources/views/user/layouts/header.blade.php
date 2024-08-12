@@ -12,7 +12,7 @@
     <meta name="keywords" content="@yield('meta_keywords', $settings[" seo_keywords_". app()->getLocale()])" />
     <meta name="description" content="@yield('meta_description', $settings[" seo_description_". app()->getLocale()])" />
 
-    <meta name="author" content="www.merlyn89.com/tr">
+    <meta name="author" content="merlynshoe.com/tr">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <meta property="og:title" content="@yield('og-title', $settings->company_name)" />

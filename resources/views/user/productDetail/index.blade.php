@@ -46,7 +46,7 @@
                                         <div class="summary entry-summary pl-30 res-991-pl-0 res-991-pt-40">
                                             <h2 class="product_title entry-title">{{ $product["name_" . app()->getLocale()] }}</h2>
                                             <div>
-                                                <small>{{__("Product Code: ")}}</small>
+                                                <small>{{__("Product Code")}}: </small>
                                                 <small>{{ $product->code }}</small>
 
                                             </div>

@@ -120,7 +120,7 @@
                 <div class="container">
                     <div class="row copyright">
                         <div class="col-md-12 justify-content-center col-lg-12 ttm-footer2-center">
-                            <span>Copyright © 2024 <a href="https://merlyn89.com/">Merlyn89</a></span>
+                            <span>Copyright © 2024 <a href="https://merlynshoe.com/">Merlyn Shoe</a></span>
                         </div>
                         <div class="col-md-12 col-lg-6 ttm-footer2-right">
                             <div class="supported_card-block">

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Merlyn89 Yönetim | Giriş Yap</title>
+    <title>Merlyn Shoe Yönetim | Giriş Yap</title>
     <meta name="description" content="Giriş Yap" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="canonical" href="https://keenthemes.com/metronic" />
@@ -46,7 +46,7 @@
                 <div class="login-signin">
                     <div class="mb-20">
                         <h3>{{getSettings()->company_name}} Yönetim Paneli</h3>
-                        <p class="opacity-60 font-weight-bold"><a href="https://www.merlyn89.com.tr" target="_blank" class="text-white">{{getSettings()->company_name}}</a> Kurumsal Web Sitesi</p>
+                        <p class="opacity-60 font-weight-bold"><a href="https:/merlynshoe.com" target="_blank" class="text-white">{{getSettings()->company_name}}</a> Kurumsal Web Sitesi</p>
                     </div>
                     <form class="form" method="post" action="{{route('admin.login')}}">
                         @csrf
