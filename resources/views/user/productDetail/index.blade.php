@@ -97,11 +97,12 @@
                                 <div class="content-tab">
                                     <!-- content-inner -->
                                     <div class="content-inner">
-                                        <p>{{ $product["description_" . app()->getLocale()] }}</p>
+                                        <p>{!!($product["description_" . app()->getLocale()])!!}</p>
                                     </div><!-- content-inner end-->
                                 </div>
                             </div>
                         </div>
+                        @if(count($products)>0)
                         <div class="pt-35 related products">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -141,6 +142,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div><!-- row end -->
             </div>
